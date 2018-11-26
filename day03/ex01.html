@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>form 모델</title>
+        <style>
+            label{
+                width: 100px;
+                display: inline-block;
+                background-color: bisque;
+            }
+            input:nth-child(2n-1){
+                border-color: gray;
+                border-style: solid;
+                border-width: 1px;
+                color: red;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>회원가입</h1>
+        <form>
+            <p>
+            <label for="pa1">name</label>
+            <input type="text" name="param1" id="pa1"/><br/>
+                <label for="pw">pw</label>
+                <input type="password" id="pw"><br/>
+                <label>tel</label>
+                <input type="tel"/><br/>
+                <label>email</label>
+                <input type="email"/><br/>
+                <label>home</label>
+                <input type="url"/><br/>
+                <label>number</label>
+                <input type="number" value="0" min="-50" max="50" /><br/>
+                <label>range</label>
+                <input type="range" value="0" min="-50" max="50" name="rang"/><br/>
+                <input type="checkbox" name="ch1"/><label>item1</label>
+                <input type="checkbox" name="ch2"/><label>item2</label>
+                <input type="checkbox" name="ch3"/><label>item3</label><br/>
+                <input type="radio" name="ra"/><label>item1</label>
+                <input type="radio" name="ra"/><label>item2</label>
+                <input type="radio" name="ra"/><label>item3</label>
+                <br/>
+                <select name="sel">
+                    <option>item1</option>
+                    <option>item2</option>
+                    <option>item3</option>
+                    <option>item4</option>
+                </select>
+            </p>
+        
+            
+            <input type="file" name="myfile" /><br/>
+            <input type="date" name="nalja"/><br/>
+            <input type="datetime" name="nalja2"/><br/>
+            <input type="time" name="nalja3"/><br/>
+            <input type="color" name="colo"/><br/>
+            
+            <input type="submit" value="전달"/>
+            <button type="submit">전달2</button>
+            <button>전달3</button>
+            <button>전달4</button><br/>
+            <input type="reset" value="취소"/>
+            <button type="reset">취소2</button>
+            <br/>
+        </form>
+        <button>전달5</button>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

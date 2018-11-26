@@ -1,0 +1,36 @@
+header,nav,section,footer{
+    width: 900px;
+    /*border: 1px solid red;*/
+    margin: 0px auto;
+}
+header>h1{
+    text-indent: -999px;
+    background-image: url(imgs/logo.jpg);
+    background-position: top;
+    background-size: 20%;
+    background-repeat: no-repeat;
+}
+nav{
+    background-color: #CCCCCC;
+}
+nav div{
+    width: 400px;
+    margin: 0px auto;
+}
+nav a{
+    display: inline-block;
+    width: 95px;
+    text-decoration: none;
+    background-color: gray;
+    text-align: center;
+}
+nav a:link,nav a:visited{
+    color: white;
+}
+nav a:hover,nav a:active{
+    background-color: red;
+}
+footer{
+    background-color: #cccccc;
+    text-align: center;
+}

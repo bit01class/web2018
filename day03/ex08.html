@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body{
+                margin: 0px;
+            }
+            div>div{
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+            }
+            div>div:last-child{
+                border: 5px solid red;
+                /*border-width: 5px;
+                border-style: solid;
+                border-color: red;*/
+            }
+            div>div:first-child{
+                margin-left: 5px;
+                margin: 0px 0px;
+            }
+            body>div:last-child>div:last-child{
+                padding: 20px;
+            }
+            
+            body>div{
+                width: 300px;
+                margin: 0px auto;
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div>box1</div>
+        </div>
+        <div>
+            <div>box2</div>
+            <div>box3</div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+

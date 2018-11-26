@@ -1,0 +1,15 @@
+/*불러들여서 적용할 내용*/
+            h1{
+                color: red;
+                border-bottom-width: 1px;
+                border-bottom-color: gray;
+                border-bottom-style: solid;
+                width: 100px;
+                text-align: center;
+            }
+            
+            p{
+                color:blue;
+                background-color: yellow;
+                width: 300px;
+            }
