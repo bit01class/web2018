@@ -1,0 +1,94 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body>*{
+    border: 1px solid red;
+}
+header>h1{
+    background-image: url(../imgs/logo.jpg);
+    background-repeat: no-repeat;
+    background-size: 150px;
+    text-indent: -9999px;
+}
+nav{
+    height: 35px;
+    background-color: #dddddd;
+}
+nav>ul{
+    width: 400px;
+    height: 35px;
+    margin: auto;
+}
+nav>ul>li{
+    width: 100px;
+    height: 35px;
+    float: left;
+    list-style: none;
+}
+nav>ul>li>a{
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    border-right-color: gray;
+    border-right-style: solid;
+    border-right-width: 3px;
+}
+nav>ul>li:first-child>a{
+    border-left-color: gray;
+    border-left-style: solid;
+    border-left-width: 3px;
+}
+nav>ul>li>a:hover,nav>ul>li>a:active{
+    color: red;
+    font-weight: bold;
+}
+section{
+    clear: both;
+    width: 60%;
+    float: left;
+    padding: 5px 50px 100px 50px;
+}
+aside{
+    width: 25%;
+    float: right;
+}
+
+aside>a{
+    display: block;
+    height: 100px;
+    text-indent: -999px;
+}
+aside>a:first-child{
+    background-image: url(../imgs/daum.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+aside>a:last-child{
+    background-image: url(../imgs/google.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+}
+
+footer{
+    clear: both;
+    text-align: center;
+    background-color: gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

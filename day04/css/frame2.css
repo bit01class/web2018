@@ -1,0 +1,84 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+nav,section,aside,footer{
+    top: 100px;
+    margin: 0px auto;
+}
+nav,section,footer{
+    width: 900px;
+}
+section{
+    width: 700px;
+}
+header{
+    top: 0px;
+    position: fixed;
+    height: 100px;
+    width: 100%;
+}
+header>h1{
+    background-image: url(../imgs/logo.jpg);
+    background-repeat: no-repeat;
+    text-indent: 250px;
+    line-height: 50px;
+    height: 100px;
+}
+nav{
+    background-color: #cccccc;
+}
+nav>ul{
+    width: 420px;
+    margin: 0px auto;
+}
+nav>ul>li{
+    display: inline-block;
+    background-color: gray;
+    width: 100px;
+}
+nav>ul>li>a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    height: 45px;
+}
+section{
+    padding: 10px 100px 50px 100px;
+}
+aside{
+    position: relative;
+    width: 100px;
+    left: 500px;
+}
+aside>a{
+    display: block;
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    text-indent: 9999px;
+}
+aside>a:first-child{
+    background-image: url(../imgs/daum.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 150px;
+}
+aside>a:last-child{
+    background-image: url(../imgs/google.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    top: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
