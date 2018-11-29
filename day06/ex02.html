@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var obj=new Object();
+            obj.su=1234;
+            obj.name='tester';
+            obj.getSu=function(){
+                return this.su;
+            };
+            obj.getName=function(){
+                return this.name;
+            };
+            obj.setSu=function(a){
+                this.su=a;
+            };
+            obj.setName=function(a){
+                this.name=a;
+            }
+            
+            var obj2={
+                //json에서의 사용은 key명 ""
+                "num":0,
+                "name":"",
+                "getNum":function(){return this.num;},
+                "setNum":function(a){this.num=a;},
+                "getName":function(){return this.name;},
+                "setName":function(a){this.name=a;}
+            };
+            obj2.setName('tester');
+            document.write(obj2.getName());
+        
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+        table{
+            width: 100%;
+            border: 1px solid gray;
+            border-collapse: collapse;
+        }
+        th,td{
+            
+            border: 1px solid gray;
+        }
+    </style>
+    <script type="text/javascript">
+    function newStudent(){
+        var stu={
+            num:0,
+            name:'이름없음',
+            kor:0,
+            eng:0,
+            math:0,
+            setNum:function(a){this.num=a;},
+            setName:function(a){this.name=a;},
+            setKor:function(a){this.kor=a;},
+            setEng:function(a){this.eng=a;},
+            setMath:function(a){this.math=a;},
+            getNum:function(){return this.num},
+            getName:function(){return this.name},
+            getKor:function(){return this.kor},
+            getEng:function(){return this.eng},
+            getMath:function(){return this.math}
+        };
+        return stu;
+    }   
+        
+    function showTable(a) {
+        document.write('<h1>학생성적 리스트</h1>');
+        document.write('<table>');
+        document.write('<tr>');
+        document.write('<th>'+'학번'+'</th>');
+        document.write('<th>'+'이름'+'</th>');
+        document.write('<th>'+'국어'+'</th>');
+        document.write('<th>'+'영어'+'</th>');
+        document.write('<th>'+'수학'+'</th>');
+        document.write('</tr>');
+        
+        for(var i=0; i<a.length; i++){
+            document.write('<tr>');
+            document.write('<td>'+a[i].getNum()+'</td>');
+            document.write('<td>'+a[i].getName()+'</td>');
+            document.write('<td>'+a[i].getKor()+'</td>');
+            document.write('<td>'+a[i].getEng()+'</td>');
+            document.write('<td>'+a[i].getMath()+'</td>');
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    }    
+    
+    var arr=new Array();
+    
+    var stu=newStudent();
+    stu.setNum(1111);
+    stu.setName('홍길동');
+    stu.setKor(90);
+    stu.setEng(80);
+    stu.setMath(70);
+    arr.push(stu);
+        
+    stu=newStudent();
+    stu.setNum(2222);
+    stu.setName('홍길자');
+    stu.setKor(91);
+    stu.setEng(81);
+    stu.setMath(71);
+    arr.push(stu);
+        
+    stu=newStudent();
+    stu.setNum(3333);
+    stu.setName('홍길무');
+    stu.setKor(92);
+    stu.setEng(82);
+    stu.setMath(72);
+    arr.push(stu);
+        
+    stu=newStudent();
+    stu.setNum(4444);
+    stu.setName('홍길까');
+    stu.setKor(94);
+    stu.setEng(84);
+    stu.setMath(74);
+    arr.push(stu);
+        
+    showTable(arr);    
+    </script> 
+        
+    </head>
+    <body>
+    </body>
+    
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        // 함수
+            function func01(c){
+                document.write('<h1>출력</h1>');    
+                if(c)return;
+                document.write('<h1>출력2</h1>');   
+                
+            }
+            
+            function func02(a,b){
+                return a*b;
+            }
+            
+            func03(100);
+            
+            var h=4321;// 전역변수
+            function func03(h){
+                //var h=1234; // 지역변수
+                document.write("in h="+h+"<br/>");
+            }
+            
+            /*v(10,3);
+            
+            var v=function(a,b){
+                document.write(a*b+'<br/>');
+            };
+            
+            
+            document.write(typeof v);*/
+        </script>
+    </head>    
+    <body>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

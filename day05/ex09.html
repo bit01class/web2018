@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <script type="text/javascript">
+            var str01="   문자열";
+            var str02='문자열';
+            var str03=new String('문자열');
+            /*
+            var str04=new String('문자열');
+            document.write('typeof str03:'+(typeof str03)+"<br/>");
+            document.write('typeof str04:'+(typeof str04)+"<br/>");
+            document.write('str3='+str03+"<br/>");
+            if(str03==str04){
+                document.write('같다');
+            }else{
+                document.write('다르다');
+            }
+            var str05=str01+str03;
+            */
+            var str06=str01.concat('입니다');
+            str06=str06.replace('입니다','입니까');
+            str06=str06.trim();
+            for(var i=0; i<str06.length; i++){
+                document.write(str06.charAt(i)+",");
+            }
+        </script>
+    </head>
+    <body>
+        
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>animation</title>
+    <style>
+        div>ul{
+            padding: 0px;
+            list-style: none;
+        }
+        div>ul>li{
+            width: 100px;
+            height: 50px;
+            /*background-color: blue;*/
+            margin: 1px 0px;
+            position: relative;
+            left: 0px;
+            transition-duration: 3s;
+        }
+        div>ul>li:first-child{
+            transition-timing-function: ease-in;
+        }
+        div>ul>li:nth-child(2){
+            transition-timing-function: ease-out;
+        }
+        div>ul>li:nth-child(3){
+            transition-timing-function: ease-in-out;
+        }
+        div>ul>li:nth-child(3){
+            transition-timing-function: linear;
+        }
+        div>ul>li:nth-child(4){
+            transition-delay: 3s;
+        }
+        div>ul>li:nth-child(5){
+            
+        }
+        div>ul>li:hover{
+            /*background-color: red;*/
+            /*width: 300px;*/
+            left: 300px;
+            transform: rotate(360deg);
+        }
+        li>img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="imgs/car.png"/></li>
+            <li><img src="imgs/car.png"/></li>
+            <li><img src="imgs/car.png"/></li>
+            <li><img src="imgs/car.png"/></li>
+            <li><img src="imgs/car.png"/></li>
+        </ul>
+    </div>
+</body>
+</html>

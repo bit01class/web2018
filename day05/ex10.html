@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var a=12;
+            var b=3.14;
+            var c='문자열';
+            var d=false;
+            
+            var arr1=[a,b,c,d];
+            arr1[2]=4321;
+            
+            document.write('typeof arr1='+(typeof arr1)+"<br/>");
+            
+            var arr2=new Array();
+            arr2.push(a);
+            arr2.push(b);
+            arr2.push(c);
+            
+            arr2.reverse();
+            /*
+            for(var i=0; i<3; i++){
+               document.write(arr2.pop()+'<br/>'); 
+                //document.write('<h1>arr['+i+']='+arr2[i]+'</h1>');
+            }
+            */
+            var e=function(){document.write('출력');return;};
+            var arr3=new Array(a,b,c);
+            document.write(arr3[0]+'<br/>');
+            document.write(arr3[1]+'<br/>');
+            document.write(arr3[2]+'<br/>');
+            document.write(arr3[3]+'<br/>');
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
