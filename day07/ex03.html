@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var ul,btn1,input,btn2;
+            window.onload=function(){
+                btn1=document.getElementsByTagName('button')[0];
+                btn2=document.getElementsByTagName('button')[1];
+                ul=document.getElementsByTagName('ul')[0];
+                input=document.getElementsByTagName('input')[0];
+                
+                
+                btn1.onclick=function(){ 
+                    var msg=ul.innerHTML+'<li>'
+                                +input.value+'</li>\n';
+                    ul.innerHTML=msg;
+                    input.value='';
+                };
+                
+                btn2.onclick=function(){
+//                    var lis=document.getElementsByTagName('li');
+//                    console.log(lis.length);
+//                    ul.removeChild(lis[lis.length-1]);
+                    var msg=ul.innerHTML;
+                    var lis=msg.split('\n');
+                    console.log(lis);
+                    var tot="";
+                    for(var i=0; i<lis.length-1; i++){
+                        if(lis.length-2==i)continue;
+                        tot+=lis[i]+'\n'
+                    }
+                    ul.innerHTML=tot;
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <input type="text"/>
+        <button>추가</button>
+        <button>제거</button>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+        </ul>
+        
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel='stylesheet' type="text/css">
+            form{
+                width: 500px;
+            }
+            label{
+                width: 40%;
+                display: inline-block;
+                text-align: right;
+            }
+            input{
+                width: 55%;
+            }
+        </style>
+        <script type="text/javascript">
+            var form,id,pw,re,name;
+            window.onload=function(){
+                form=document.querySelector('form');
+                id=document.querySelectorAll('input')[0];
+                pw=document.querySelectorAll('input')[1];
+                re=document.querySelectorAll('input')[2];
+                name=document.querySelectorAll('input')[3];
+                
+                form.onsubmit=function(){
+                    //console.log(id.value,pw.value,re.value,name.value);
+                    if(id.value.trim()=='')return false;
+                    if(pw.value.trim()=='')return false;
+                    if(re.value.trim()=='')return false;
+                    if(pw.value.length<4)return false;
+                    if(!pwChck(pw.value))return false;
+                    if(pw.value!=re.value)return false;
+                    if(name.value.trim()=='')return false;
+                    
+                    return true;
+                };
+            };
+            function pwChck(msg){
+                var chk1=false;//대문자
+                var chk2=false;//소문자
+                var chk3=false;//숫자
+                var chk4=false;//특수문자
+                
+                for(var i=0; i<msg.length; i++){
+                    var su=msg.charCodeAt(i);
+                    if(su>=48&&su<=57){chk3=true;}
+                    if(su>=65&&su<=90){chk1=true;}
+                    if(su>=97&&su<=122){chk2=true;}
+                    if(su>=33&&su<=38){chk4=true;}
+                }
+                return chk1&&chk2&&chk3&&chk4;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>회원가입</h1>
+        <form action="ex04.html">
+            <label for="id">id</label>
+            <input type="text" name="id" id="id"/>
+            <label for="pw">pw</label>
+            <input type="text" name="pw" id="pw"/>
+            <label for="re"></label>
+            <input type="text" id="pw"/>
+            <label for="name">name</label>
+            <input type="text" name="name" id="name"/>
+            <button type="submit">전송</button>
+            <button type="reset">취소</button>
+        </form>
+        
+    </body>
+</html>

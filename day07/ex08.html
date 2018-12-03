@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel='stylesheet' type="text/css">
+            div{
+                width: 100px;
+                height: 400px;
+                background-color: yellow;
+            }
+        </style>
+        <script type="text/javascript">
+            var input,btn,evn,div,body;
+            window.onload=function(){
+                input=document.querySelector('input');
+                input.onkeydown=function(e){
+                    evn=e;
+                    console.log('keydown:');
+                };
+                input.onkeypress=function(e){
+                    console.log('keypress:');
+                };
+                input.onkeyup=function(e){
+                    console.log('keyup:');
+                };
+            };
+        </script>
+    </head>
+    <body>
+        <input type="text"/><button>입력</button>
+        <div></div>
+    </body>
+</html>

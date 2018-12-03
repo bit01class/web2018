@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel='stylesheet' type="text/css">
+            body>div{
+                border: 1px solid black;
+                width: 400px;
+                height: 400px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            div>div{
+                background-color: red;
+                width: 50px;
+                height: 50px;
+                position: relative;
+                top: 0px;
+                left: 0px;
+            }
+        </style>
+        <script type="text/javascript">
+            var div,eve;
+            var x=8,y=8;
+            var tempX,tempY;
+            window.onload=function(e){
+                div=document.querySelector('body>div');
+                x=div.style.left='0px';
+                y=div.style.top='0px';
+                ele=document.querySelector('div>div');
+                ele.style.left='0px';
+                ele.style.top='0px';
+                console.log(x,y);
+                div.onclick=function(e){
+                    //clientX,Y
+                    //offsetX,Y
+                    //pageX,Y
+                    // X,Y
+                    //screenX,Y-모니터기준
+//                    console.log('클릭');
+//                    console.log(e.x,e.y);
+//                    ele.style.left=e.x-x-25+"px";
+//                    ele.style.top=e.y-y-25+"px";
+                };
+//                div.onmouseover=function(){
+//                    console.log('마우스 오버');
+//                };
+//                div.onmouseout=function(){
+//                    console.log('마우스 아웃');
+//                };
+                div.onmousedown=function(e){
+                    console.log('mousedown');
+                    tempX=e.x;
+                    tempY=e.y;
+                    div.onmousemove=myMove;
+                };
+                div.onmouseup=function(e){
+                    div.onmousemove=null;
+                }
+                
+            };
+            function myMove(e){
+                    console.log(e.x-tempX,e.y-tempY);
+                    ele.style.left=e.x-tempX+'px';
+                    ele.style.top=e.y-tempY+'px';
+                }
+        </script>
+    </head>
+    <body>
+        <div><div></div></div>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
