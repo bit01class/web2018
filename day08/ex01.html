@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body{
+                margin: 0px;
+            }
+            div{
+                position: relative;
+                width: 320px;
+                margin: 0px auto;
+            }
+            div>img{
+                width: 320px;
+                height: 320px;
+            }
+            div>a{
+                text-indent: -999px;
+                position: absolute;
+                top: 0px;
+                display: inline-block;
+                width: 50px;
+                height: 320px;
+                background-color: gray;
+                opacity: 0.5;
+            }
+            div>a:nth-child(2){
+                left: 0px;
+            }
+            div>a:nth-child(3){
+                left:270px;
+            }
+        </style>
+        <script type="text/javascript">
+            
+            var img,prev,next;
+            var cnt=1;
+            
+            window.onload=function(){
+                img=document.querySelector('img');
+                //window.setInterval(imgRoll,3000);
+                prev=document.querySelectorAll('a')[0];
+                next=document.querySelectorAll('a')[1];
+                prev.onclick=function(){
+                    console.log('prev');
+                    imgBack();
+                    return false;
+                };
+                next.onclick=function(){
+                    console.log('next');
+                    imgRoll();
+                    return false;
+                };
+            };
+            function imgRoll(){
+                if(cnt<6)cnt++;
+                else cnt=1;
+                img.src='imgs/big'+cnt+'.jpg';
+            }
+            
+            function imgBack(){
+                if(cnt>1)cnt--;
+                else cnt=6;
+                img.src='imgs/big'+cnt+'.jpg';
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <img alt="" src="imgs/big1.jpg"/>
+            <a href="#">prev</a>
+            <a href="#">next</a>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

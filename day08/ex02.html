@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        var num=1;
+            var imgs,prev,next,myloop;
+            window.onload=function(){
+                imgs=document.querySelectorAll('img');
+                prev=document.querySelectorAll('a')[0];
+                next=document.querySelectorAll('a')[1];
+                imgs[0].src='imgs/big'+1+'.jpg';
+                imgs[1].src='imgs/big'+2+'.jpg';
+                imgs[2].src='imgs/big'+3+'.jpg';
+                prev.onclick=function(){
+                    previmg();
+                    return false;
+                };
+                next.onclick=function(){
+                    nextimg();
+                    return false;
+                };
+                myloop=window.setInterval(nextimg,3000);
+            };
+            function previmg(){
+                window.clearInterval(myloop);
+                if(num>-1)num--;
+                else num=4;
+                if(num==0){
+                    imgs[0].src='imgs/big'+6+'.jpg';
+                }else if(num==-1){
+                    imgs[0].src='imgs/big'+5+'.jpg';
+                }else{
+                    imgs[0].src='imgs/big'+num+'.jpg';
+                }
+                if(num==-1){
+                   imgs[1].src='imgs/big'+6+'.jpg';
+                }else{
+                    imgs[1].src='imgs/big'+(num+1)+'.jpg';
+                }
+                imgs[2].src='imgs/big'+(num+2)+'.jpg';
+                myloop=window.setInterval(nextimg,3000);
+            }
+            function nextimg(){
+                window.clearInterval(myloop);
+                if(num<6)   num++;
+                else        num=1;
+                imgs[0].src='imgs/big'+num+'.jpg';
+                if(num==6){
+                    imgs[1].src='imgs/big'+1+'.jpg';
+                }else{
+                    imgs[1].src='imgs/big'+(num+1)+'.jpg';
+                }
+                if(num==5){
+                    imgs[2].src='imgs/big'+1+'.jpg';
+                }else if(num==6){
+                    imgs[2].src='imgs/big'+2+'.jpg';
+                }else{
+                    imgs[2].src='imgs/big'+(num+2)+'.jpg';
+                }
+                
+                myloop=window.setInterval(nextimg,3000);
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <img alt="" src=""/>
+            <img alt="" src=""/>
+            <img alt="" src=""/>
+            <a href="#">prev</a>
+            <a href="#">next</a>
+        </div>
+    </body>
+</html>
