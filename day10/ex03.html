@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            var arr=[
+                        '#ff0000','#00ff00','#0000ff',
+                        '#ffff00','#00ffff','#ff00ff'
+                    ];
+            window.onload=function(){
+                $('li').css('background-color',function(idx,val){
+                    var msg='rgba(255,0,0,'+((idx+1)/$('li:odd').length)+')';
+                    console.log(val);
+                    return msg;
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <h1>제목</h1>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+        </ul>
+    </body>
+</html>

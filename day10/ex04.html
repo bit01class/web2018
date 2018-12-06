@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                //var msg=$('img').attr('src');
+                //alert(msg);
+                $('img').attr('src','imgs/sm1.jpg');
+                //var msg=$('a').attr('href');
+                //alert(msg);
+                $('a').attr('href','http://google.com');
+                
+                //$('option').eq(1).prop('selected',true);
+                //$(':radio').last().prop('checked',true);
+                $('option').last().attr('selected','selected');
+                $(':radio').last().attr('checked','checked');
+            };
+        </script>
+    </head>
+    <body>
+        <h1>속성제어</h1>
+        <img alt="logo" src="imgs/logo.jpg" />
+        <div><a href="http://naver.com">link</a></div>
+        <div>
+            <input type="text"/>
+        </div>
+        <div>
+            <select>
+                <option>item1</option>
+                <option>item2</option>
+                <option selected="selected">item3</option>
+                <option>item4</option>
+            </select>
+        </div>
+        <div>
+            <input type="radio" name="ra"/><label>item1</label>
+            <input type="radio" name="ra" checked/><label>item2</label>
+            <input type="radio" name="ra"/><label>item3</label>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

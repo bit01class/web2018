@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            div>ul{}
+            div>ul>li{
+                float: left;
+                list-style: none;
+            }
+            /*div>ul>li>img{
+                display: none;
+            }
+            div>ul>li:first-child > img{
+                display: block;
+            }*/
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            var cnt=0;
+            window.onload=function (){
+                setInterval(callback3,2000);
+            };
+            
+            function callback3(){
+                //1~6
+                if(cnt<6)cnt++;
+                else cnt=1;
+                $('.thumb').eq(1).attr('src','imgs/sm'+cnt+'.jpg');
+                func01(cnt);
+                func02(cnt);
+                $('#big').attr('src','imgs/big'+cnt+'.jpg');
+            }
+            function func01(a){
+                if(a-2<0)a=7;
+                $('.thumb').eq(0).attr('src','imgs/sm'+(a-1)+'.jpg');
+            }
+            function func02(a){
+                if(a==6)a=0;
+                $('.thumb').eq(2).attr('src','imgs/sm'+(a+1)+'.jpg');
+            }
+            
+            
+            function callback2(){
+                
+                $('li').css('display','none');
+                 $('li').eq(cnt).css('display','block').next().css('display','block').next().css('display','block');
+                if(cnt<5)cnt++;
+                else cnt=0;
+            }
+            
+            function callback(){
+                //attr
+                if(cnt<6)cnt++;
+                else cnt=1;
+                
+                $('img').eq(0).attr('src','imgs/big'+cnt+'.jpg');
+                
+                if(cnt==6){
+                $('img').eq(1).attr('src','imgs/big'+(1)+'.jpg');
+                }else{
+                $('img').eq(1).attr('src','imgs/big'+(cnt+1)+'.jpg');
+                }
+                
+                if(cnt==5){
+                $('img').eq(2).attr('src','imgs/big'+(1)+'.jpg');
+                }else if(cnt==6){
+                $('img').eq(2).attr('src','imgs/big'+(2)+'.jpg');
+                }else{
+                $('img').eq(2).attr('src','imgs/big'+(cnt+2)+'.jpg');
+                }
+            }
+        
+        </script>
+    </head>
+    <body>
+        <h1>케러셀</h1>
+        <div>
+            <img id='big'/>
+        </div>
+        <div>
+            <img class="thumb" />
+            <img class="thumb" />
+            <img class="thumb" />
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

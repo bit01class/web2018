@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	header,nav,section,footer{
+		width: 900px;
+		margin: 0px auto;
+		border: 1px solid gray;
+	}
+	header>h1{
+		width: 70%;
+		float: left;
+	}
+	header>div{
+		width: 20%;
+		float: right;
+		margin: 10px;
+	}
+	nav{
+		clear: both;
+	}
+
+</style>
+<script type="text/javascript">
+	// 동기,비동기
+	var btn, div, id, pw;
+	
+	window.onload=function(){
+		btn=document.querySelector("header>div>button");
+		div=document.querySelector("header>div");
+		id=document.querySelectorAll("header>div>input")[0];
+		pw=document.querySelectorAll("header>div>input")[1];
+		
+		btn.addEventListener('click',callback);
+	};
+	
+	function callback(){
+		var param1=id.value;
+		var param2=pw.value;
+		var xhr=new XMLHttpRequest();
+		xhr.onreadystatechange=function(){
+			/*
+			xhr.readyState
+			0	UNSENT	Client has been created. open() not called yet.
+			1	OPENED	open() has been called.
+			2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+			3	LOADING	Downloading; responseText holds partial data.
+			4	DONE	The operation is complete.
+			*/
+			console.log('onreadystatechange',xhr.status);
+			if(xhr.readyState==4&&xhr.status==200){
+				var msg = xhr.responseText;
+				div.innerHTML=msg;
+			}else if(xhr.readyState==4){
+				alert('에러');
+			}
+		};
+		xhr.open('GET','http://localhost:8080/ajax01/result01.jsp?id='+param1+'&pw='+param2,true);
+//		xhr.open('GET','http://daum.net',true);
+		xhr.send();
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<header>
+		<h1>비트교육센터</h1>
+		<div>
+			<label for="id">id</label><input type="text" id="id" /><br/>
+			<label for="pw">pw</label><input type="text" id="pw" /><br/>
+			<button>로그인</button>
+		</div>
+	</header>
+	<nav>
+		<a href="#">menu1</a>
+		<a href="#">menu2</a>
+		<a href="#">menu3</a>
+		<a href="#">menu4</a>
+	</nav>
+	<section>
+		<h1>환영합니다</h1>
+	</section>
+	<footer>
+	Copyright &copy; 비트캠프 All rights reserved.
+	</footer>
+</body>
+</html>

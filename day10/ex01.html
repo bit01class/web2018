@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+           /*h1{
+                color: red;
+                background-color: #0000ff;
+                border: 1px solid gray;
+            }*/
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            window.onload=function (){
+                $('h1').css({
+                'color': 'red',
+                'backgroundColor': '#0000ff',
+                'border': '1px solid gray'
+            });
+            };
+        </script>
+    </head>
+    <body>
+        <!--
+        jquery.com 
+            -> download 
+            -> jQuery CDN 
+            ->jQuery Core 1.12.4 - uncompressed, minified
+        -->
+        <h1 class="cl1">선택자&lt;&gt;</h1>
+        <ul>
+            <li>item1</li>
+            <li id="item2">item2</li>
+            <li>item3
+                <ul>
+                    <li>item3-1</li>
+                    <li class="cl1">item3-2</li>
+                    <li class="cl1">item3-3</li>
+                    <li>item3-4</li>
+                    <li>item3-5</li>
+                    <li>item3-6</li>
+                </ul>
+            </li>
+            <li>item4</li>
+            <li>
+                <ol>
+                    <li>item5-1</li>
+                    <li class="cl1">item5-2</li>
+                    <li class="cl1">item5-3</li>
+                    <li>item5-4</li>
+                    <li>item5-5</li>
+                    <li>item5-6</li>
+                </ol>
+            </li>
+            <li>item6</li>
+        </ul>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

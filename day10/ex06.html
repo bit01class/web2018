@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+        .cl1{
+            background-color: red;
+        }
+        .cl2{
+            color: blue;
+        }
+        .cl3{
+            display: none;
+        }
+        .cl4{
+            border: 1px solid gray;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        
+        window.onload=function(){
+            var h=$('ul').outerHeight();
+            var ih=$('ul').innerHeight();
+            var w=$('ul').outerWidth();
+            var iw=$('ul').innerWidth();
+            alert(w+":"+h+"\n"+iw+":"+ih);
+            
+//            var btns = document.querySelectorAll('button');
+//            
+//            btns[0].addEventListener('click',function(){
+//                $('h1').addClass('cl1');
+//            });
+//            btns[1].addEventListener('click',function(){
+//                $('h1').removeClass('cl1');
+//            });
+//            btns[2].addEventListener('click',function(){
+//                $('h1').toggleClass('cl1');
+//            });
+            
+//            $('li').addClass(function(idx,name){
+//                console.log(idx,name);
+//                if(idx%2==0)
+//                return 'cl2';
+//                else
+//                return '';
+//            });
+        };
+    </script>
+</head>
+<body>
+    <h1 class="cl2">class add,remove</h1>
+    <button>add</button>
+    <button>remove</button>
+    <button>toggle</button>
+    <ul>
+        <li>item1</li>
+        <li class="cl4">item2</li>
+        <li class="cl1 cl4">item3</li>
+        <li>item4</li>
+        <li>item5</li>
+    </ul>
+</body>
+</html>
