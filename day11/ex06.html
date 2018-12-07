@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel='stylesheet' type="text/css">
+            div{
+                border: 1px solid blue;
+                width: 100px;
+                height: 100px;
+            }
+            div>div{
+                margin-left: 50px;
+            }
+            #pnt{
+                border-color: white;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                $('button').click(function(){
+                    $('#pnt').append('클릭<br/>');
+                });
+                $('button').mouseup(function(){
+                    $('#pnt').append('mouseup<br/>');
+                });
+                $('button').mousedown(function(){
+                    $('#pnt').append('mousedown<br/>');
+                }).css('color','red');
+                
+//                $('#box1').mouseover(function(){
+//                    $('#pnt').append('mouseover<br/>');
+//                }).mouseout(function(){
+//                    $('#pnt').append('mouseout<br/>');
+//                });
+                
+//                $('#box1').mouseenter(function(){
+//                    $('#pnt').append('mouseenter<br/>');
+//                }).mouseleave(function(){
+//                    $('#pnt').append('mouseleave<br/>');
+//                });
+                
+                $('#box1').click(function(){
+                    $('#pnt').append('클릭<br/>');
+                }).dblclick(function(){
+                    $('#pnt').append('더블클릭<br/>');
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <button>버튼</button>
+        <div id="box1">
+           box1
+            <div id='box2'>box2</div>
+        </div>
+        <div id="pnt"></div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

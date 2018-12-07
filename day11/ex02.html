@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            window.onload=function(){
+                //$('ul').html('<li>item0</li>'+$('ul').html());
+                //$('li').eq(1).before('<li>item1-2</li>').after('<li>item2-3</li>');
+                //$('li').last().after($('p'));
+//                $('li').last().after('li');
+//                $('<li/>').insertBefore('li:eq(2)');
+                var arr=[
+                    'add1','add2','add3'
+                ];
+                $('ul>li').before(function(idx){
+                    console.log(idx,this);
+                    return $('ol>li').eq(0);
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>제목</h1>
+            <p>내용</p>
+            <ul>
+                <li>item1</li>
+                <li>item2</li>
+                <li>item3</li>
+            </ul>
+            <ol>
+                <li>ol1</li>
+                <li>ol2</li>
+                <li>ol3</li>
+            </ol>
+        </div>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

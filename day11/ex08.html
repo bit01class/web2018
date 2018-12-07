@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+//            window.onload=function(){
+//                console.log('호출');
+//            };
+            window.addEventListener('load',function(){
+                console.log('load');
+            });
+            $(function(){
+                console.log('function');
+            });
+            $(document).ready(function(){
+                console.log('ready');
+            });
+        </script>
+    </head>
+    <body>
+        <h1>문서</h1>
+    </body>
+</html>

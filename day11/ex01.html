@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            var lis;
+            window.onload=function(){
+                lis=document.querySelectorAll('li');
+//                for(var i=0; i<lis.length; i++){
+//                    var li=lis[i];
+//                    li.innerText='edit'+i;
+//                }
+                var arr=['item1','item2','item3','item4','item5'];
+                /////////////////////////////////////
+                //ES6문법추가
+                // for in
+                // for of
+//                for(var li of lis){
+//                    console.log(li);
+//                }
+                /////////////////////////////////////
+//                lis.forEach(function(ele,idx){
+//                    ele.innerText='forEach'+idx;
+//                    console.log(this);
+//                });
+                /////////////////////////////////////
+//                $('li').each(function(idx,ele){
+////                    ele.innerText='jq'+idx;
+//                    $(this).text('edit'+idx);
+//                    console.log(this==ele);
+//                });
+                /////////////////////////////////////
+//                $('li').filter(function(idx,ele){
+////                    console.log(ele==this,ele,this);
+//                    if($(ele).hasClass('cl1')) return true; 
+//                }).text('edit');
+                /////////////////////////////////////
+                //'<a href="#">link</a>'
+                
+                $('li').html(function(idx,ele){
+                    console.log(ele,this);
+                    return '<a href="'+ele+'">['+ele+']</a>';
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <h1>배열</h1>
+        <ul>
+            <li>http://naver.com</li>
+            <li>http://google.com</li>
+            <li>http://daum.net</li>
+        </ul>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

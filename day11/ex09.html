@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            .err{
+                font-size: 0.8em;
+                font-style: italic;
+                color: red;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            var arr=[];
+            $(document).ready(function(){
+//                $('input').eq(0).val('아이디를 입력하세요').blur(function(){
+//                        console.log('포커스빠져나감');
+//                    }).focus(function(){
+//                        console.log('포커스얻음');
+//                        $(this).val("");
+//                    });
+                //api
+                $('select').change(function(){
+                    console.log('select:'+$(this).val());
+                });
+                $(':radio').change(function(){
+                    console.log($(this).val());
+//                    target=this;
+//                    $(this).parent().children("input").each(function(idx,ele){
+//                        if(target==ele)console.log('radio:'+idx);
+//                    });
+                    
+                });
+                $(':checkbox').change(function(e){
+                    target=e.target;
+                    $(':checkbox').each(function(idx,ele){
+                        if(target==ele)cnt=idx;
+                    });
+                    
+                    if($(this).prop('checked')){
+                        arr[cnt]=$(this).val();
+                    }else{
+                        arr[cnt]="";
+                    }
+                });
+                
+                
+//                $('form').submit(function(e){
+//                    $('.err').remove();
+//                    var result=true;
+//                    e.preventDefault();//window.location.href;
+//                    $(':text,:password')
+                    
+                    
+                    
+//                    $('form>div').filter(function(idx){
+//                        if(idx<4)return true;
+//                    }).children('input').each(function(){
+//                        if($(this).val()==""){
+//                            $(this).after('<span class="err">빈값허용안함</span>');
+//                            result=false;
+//                        }
+//                    }).eq(2).each(function(){
+//                        if($(this).val()!=$(this).parent().prev().children('input').val()){ 
+//                            $(this).after('<span class="err">패스워드 불일치</span>');
+//                            result=false;
+//                        }
+//                    });
+//                    return result;
+//                });
+            });
+        
+        </script>
+    </head>
+    <body>
+        <h1>회원가입</h1>
+        <form action="ex10.html" method="get">
+            <div>
+                <label for="id">id</label>
+                <input type="text" id="id"/>
+            </div>
+            <div>
+                <label for="pw">pw</label>
+                <input type="password" id="pw"/>
+            </div>
+            <div>
+                <label for="re"></label>
+                <input type="password" id="re"/>
+            </div>
+            <div>
+                <label for="name">name</label>
+                <input type="text" id="name"/>
+            </div>
+            <div>
+                <label for="tel">tel</label>
+                <input type="tel" id="tel"/>
+            </div>
+            <div>
+                <label for="email">email</label>
+                <input type="email" id="email"/>
+            </div>
+            <div>
+                <label for="url">home</label>
+                <input type="url" id="url"/>
+            </div>
+            <div>
+                <input type="checkbox" id="ch1" name="ch" value="ch1"><label for="ch1">item1</label>
+                <input type="checkbox" id="ch2" name="ch" value="ch2"><label for="ch2">item2</label>
+                <input type="checkbox" id="ch3" name="ch" value="ch3"><label for="ch3">item3</label>
+            </div>
+            <div>
+                <input type="radio" name="ra" id="ra1" value="ra1"><label for="ch1">item1</label>
+                <input type="radio" name="ra" id="ra2" value="ra2" checked><label for="ch2">item2</label>
+                <input type="radio" name="ra" id="ra3" value="ra3"><label for="ch3">item3</label>
+            </div>
+            <div>
+                <select>
+                    <option>item1</option>
+                    <option>item2</option>
+                    <option>item3</option>
+                    <option>item4</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">입력</button>
+                <button type="reset">취소</button>
+            </div>
+        </form>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
