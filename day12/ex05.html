@@ -5,7 +5,8 @@
         <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
-                $(document).on('click','a',function(){
+                $(document).on('click','a',function(e){
+                    e.isDefaultPrevented();
                     alert('네이버');
                     return false;
                 });

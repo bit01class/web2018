@@ -3,6 +3,14 @@
     <head>
         <meta charset="utf-8">
         <style rel="stylesheet" type="text/css">
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+            body>div{
+                width: 100%;
+                margin: 0px auto;
+            }
             #menu{}
             #menu>ul{
                 padding: 0px;
@@ -34,6 +42,8 @@
             }
             #content{
                 clear: both;
+                width: 960px;
+                float: left;
             }
             #content>#imgs{
                 width: 960px;
@@ -51,6 +61,14 @@
             #content>#imgs>ul>li>img{}
             .article{
                 clear: both;
+                width: 200px;
+                background-color: gray;
+            }
+            div>div:nth-child(3){
+                float: left;
+            }
+            div>.article:nth-child(5){
+                float: right;
             }
         </style>
         <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
@@ -112,6 +130,7 @@
                     </li>
                 </ul>
             </div>
+            <div class="article">aaaa</div>
             <div id="content">
                 <h1>환영합니다</h1>
                 <div id="imgs">
@@ -125,8 +144,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="article"></div>
-            <div class="article"></div>
+            <div class="article">aaaa</div>
             <div id="footer">
                 <address>비트캠프 서울시 서초구 서초동 1327-15 비트아카데미빌딩</address>Copyright &copy; 비트캠프 All rights reserved.
             </div>

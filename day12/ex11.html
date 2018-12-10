@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link type="text/css" href="css/jquery.bxslider.css"/>
+        <style rel='stylesheet' type="text/css">
+            bx-clone{
+                position: relative;
+            }
+            .bx-caption{
+                background-color: black;
+                color: white;
+                top: 300px;
+                width: 320px;
+                position: absolute;
+            }
+            .bx-caption>span{
+                display: block;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('body>div').bxSlider({
+                mode:'horizontal',  /*'horizontal', 'vertical', 'fade'*/
+                auto:true,
+                speed:2000,      /* pause:1000,*/
+                slideWidth:320,
+                minSlides:2,
+                maxSlides:3,
+                moveSlides:1,
+                slideMargin:50,
+                captions:true,
+                randomStart:true,
+                controls:true,
+                nextText:'다음',
+                autoControls:true,
+                keyboardEnabled:true,
+                pager:false
+            });
+          });
+        </script>
+    </head>
+    <body>
+        <h1>케러셀 (bxslider)</h1>
+        <div>
+          <div><img alt="" src="imgs/big1.jpg"  title="img1"/></div>
+          <div><img alt="" src="imgs/big2.jpg"  title="img2"/></div>
+          <div><img alt="" src="imgs/big3.jpg"  title="img3"/></div>
+          <div><img alt="" src="imgs/big4.jpg"  title="img4"/></div>
+          <div><img alt="" src="imgs/big5.jpg"  title="img5"/></div>
+          <div><img alt="" src="imgs/big6.jpg"  title="img6"/></div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
