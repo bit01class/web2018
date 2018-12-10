@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input').on('focusin click',callback);
+        });
+        
+        function callback(e){
+            $('div').append(e.type+'-이벤트 발동<br/>');
+        }
+    </script>
+</head>
+<body>
+    <input type="text"/>
+    <button>클릭</button>
+    <div></div>
+</body>
+</html>

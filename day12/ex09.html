@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            #menu{}
+            #menu>ul{
+                padding: 0px;
+            }
+            #menu>ul>li{
+                margin: 0px 10px;
+                list-style: none;
+                float: left;
+                background-color: darkgray;
+                text-align: center;
+                width: 100px;
+                height: 50px;
+            }
+            #menu>ul>li>ol{
+                padding: 0px;
+               display: none;
+            }
+            #menu>ul>li>ol>li{
+                list-style: none;
+            }
+            #menu>ul>li>ol>li>a{
+                display: block;
+                width: 100px;
+                height: 50px;
+                background-color: gray;
+                color: white;
+                text-decoration: none;
+                text-align: center;
+            }
+            #content{
+                clear: both;
+            }
+            #content>#imgs{
+                width: 960px;
+                height: 320px;
+                overflow: hidden;
+            }
+            #content>#imgs>ul{
+                width: 1920px;
+                padding: 0px;
+            }
+            #content>#imgs>ul>li{
+                float: left;
+                list-style: none;
+            }
+            #content>#imgs>ul>li>img{}
+            .article{
+                clear: both;
+            }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#menu>ul>li').mouseover(function(){
+                    $(this).children('ol').stop().slideDown(1000);
+                }).mouseout(function(){
+                    $(this).children('ol').stop().slideUp(1000);
+                });
+                window.setInterval(imgNext,5000);
+            });
+            function imgNext(){
+                $('#content>#imgs>ul').animate({margin: '0px -320px'},3000,'swing',function(){
+                    $('#content>#imgs>ul').children().first().appendTo('#content>#imgs>ul')
+                     $('#content>#imgs>ul').css({margin: '0px'});
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="header">
+                <h1>비트교육센터</h1>
+            </div>
+            <div id="menu">
+                <ul>
+                    <li>menu1
+                        <ol>
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ol>
+                    </li>
+                    <li>menu2
+                        <ol>
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ol>
+                    </li>
+                    <li>menu3
+                        <ol>
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ol>
+                    </li>
+                    <li>menu4
+                        <ol>
+                            <li><a href="#">menu1-1</a></li>
+                            <li><a href="#">menu1-2</a></li>
+                            <li><a href="#">menu1-3</a></li>
+                            <li><a href="#">menu1-4</a></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div id="content">
+                <h1>환영합니다</h1>
+                <div id="imgs">
+                    <ul>
+                        <li><img src="imgs/big1.jpg" /></li>
+                        <li><img src="imgs/big2.jpg" /></li>
+                        <li><img src="imgs/big3.jpg" /></li>
+                        <li><img src="imgs/big4.jpg" /></li>
+                        <li><img src="imgs/big5.jpg" /></li>
+                        <li><img src="imgs/big6.jpg" /></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="article"></div>
+            <div class="article"></div>
+            <div id="footer">
+                <address>비트캠프 서울시 서초구 서초동 1327-15 비트아카데미빌딩</address>Copyright &copy; 비트캠프 All rights reserved.
+            </div>
+        </div> 
+        
+        
+        
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

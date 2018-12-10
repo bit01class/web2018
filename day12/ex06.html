@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('button').eq(0).on('click',function(){
+                    $('div').append('버튼1이벤트<br/>');
+//                    $('button').eq(1).click();
+//                    $('button').eq(1).on('click');
+                    
+//                    $('button').eq(1).trigger('click',{name:'tester'});
+                    $('button').eq(1).trigger('click',[12,34,56]);
+                });
+                $('button').eq(1).on('click',function(e,a,b,c){
+                    $('div').append(a+","+b+","+c+'버튼2이벤트<br/>');
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <h1>트리거</h1>
+        <button>btn1</button>
+        <button>btn2</button>
+        <div></div>
+    </body>
+</html>
