@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$.get('ex02.xml',function(data){
+			/* 
+			var imgs=$(data).find('img');
+			for(var i=0; i<imgs.length; i++){
+				var path=imgs.eq(i).find('path').text()+imgs.eq(i).find('name').text();
+				$('div').append('<img src="'+path+'"/>');
+			} 
+			*/
+			$(data).find('img').each(function(idx,ele){
+				/* var name=$(ele).children().first().text();
+				var path=$(ele).children().last().text();
+				path+=name;
+				var img=$("<img/>").attr('src',path);
+				$('div').append(img); */
+				$('div').append($("<img/>").attr('src',$(ele).children().last().text()+$(ele).children().first().text()));
+			});
+		});
+	});
+
+</script>
+</head>
+<body>
+	<h1>xml데이터 파싱</h1>
+	<div></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

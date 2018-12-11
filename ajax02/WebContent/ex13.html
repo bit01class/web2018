@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#header{
+	}
+	#header>h1{float: left;}
+	#header>form{
+		width: 200px;
+		background-color: yellow;
+		float: right;
+	}
+	#menu{
+		clear: both;
+		text-align: center;
+		background-color: gray;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$('form').submit(function(e){
+			e.preventDefault();
+			var url=$(this).attr('action');
+			var param={
+					id:$(this).find('input').first().val(),
+					pw:$(this).find('input').last().val()
+			};
+			$.get(url,param,function(data){
+				if($(data).find('result').text()=='true'){
+					$('#header>form').remove();
+					$('div').appendTo('#header').html('<p>'+id+'님 로그인 하셨습니다</p>');
+				}else{
+					alert('로그인 실패');
+					$('#header>div>input').each(function(){
+						$(this).val('');
+					});
+					$('#header>div>input').first().focus();
+				}
+			});
+		});
+		
+		
+		/* $('#header>div>button').click(function(){
+			var id=$('#header>div>input').first().val();
+			var pw=$('#header>div>input').last().val();
+			
+			//var param='id='+id+'&pw='+pw;
+			var param=$.param({
+				'id':id,
+				'pw':pw
+			});
+			alert(param);
+			
+			$.get('ex03.xml',param,function(data){
+				if($(data).find('result').text()=='true'){
+					$('#header>div').html('<p>'+id+'님 로그인 하셨습니다</p>');
+				}else{
+					alert('로그인 실패');
+					$('#header>div>input').each(function(){
+						$(this).val('');
+					});
+					$('#header>div>input').first().focus();
+				}
+			});
+		}); */
+	});
+
+</script>
+</head>
+<body>
+	<div id="header">
+		<h1>비트교육센터</h1>
+		<form action="ex03.xml" method="get">
+			<label for="id">id</label><input type="text" id="id" name="id" /><br/>
+			<label for="pw">pw</label><input type="password" id="pw" name="pw" /><br/>
+			<button>로그인</button>
+		</form>
+	</div>
+	<div id="menu">
+		<a href="#">menu1</a>
+		<a href="#">menu2</a>
+		<a href="#">menu3</a>
+		<a href="#">menu4</a>
+	</div>
+</body>
+</html>
