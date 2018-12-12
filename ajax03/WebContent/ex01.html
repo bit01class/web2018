@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		jQuery.get('ex01.json',function(data){
+			$('div').html('<h2>id:'+data.root[0].id+'</h2>').append('<h3>name:'+data.root[0].name+'</h3>');
+			
+		},'json');
+	});
+</script>
+</head>
+<body>
+	<h1>json파싱</h1>
+	<div></div>
+</body>
+</html>

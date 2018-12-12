@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="js/jquery.bxslider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//$.get();
+		$.ajax({
+			url:'ex02.json',
+			method:'get',
+			dataType:'json',
+			success:function(data,textStatus,jqXHR){
+				var arr=data.imgs;
+				for(var i=0; i<arr.length; i++){
+//					$('<img src="imgs/'+arr[i].name+'"/>').appendTo('#bx').attr('title',arr[i].title);
+					$('<img title="'+arr[i].title+'"/>').appendTo('#bx').attr('src','imgs/'+arr[i].name);
+				}
+				$('#bx').bxSlider({
+					captions: true,
+					slideWidth:320,
+					minSlides:1,
+					maxSlides:3,
+					moveSlides:1,
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>케러셀</h1>
+	<div id="bx"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
