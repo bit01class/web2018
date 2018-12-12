@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		width: 100%;
+		border-collapse: collapse;
+	}
+	tr,th,td{
+		border:1px solid gray;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.ajax({
+			url:'ex05.xml',
+			method:'get',
+			dataType:'xml',
+			error:function(a,b,c){
+				alert(b+') '+c);
+			},
+			success:function(data){
+				$(data).find('location').each(function(){
+					var tr=$('<tr></tr>');
+					tr.append('<td>'+$(this).children('city').text()+'</td>');
+					//tr.append('<td>'+$(this).children('data').eq(0).children('wf').first().text()+'</td>');tr.append('<td>'+$(this).children('data').eq(1).children('wf').first().text()+'</td>');
+					
+					for(var i=0; i<4; i++){
+						tr.append('<td>'+$(this).children('data').eq(i).children('wf').first().text()+'</td>');tr.append('<td>'+$(this).children('data').eq(1).children('wf').first().text()+'</td>');
+					}
+					tr.appendTo('table');
+				});
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>지역별 날씨</h1>
+	<table>
+		<tr>
+			<th>지역</th>
+			<th>12/15 am</th>
+			<th>12/15 pm</th>
+			<th>12/16 am</th>
+			<th>12/16 pm</th>
+			<th>12/17 am</th>
+			<th>12/17 pm</th>
+			<th>12/18 am</th>
+			<th>12/18 pm</th>
+		</tr>
+		
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

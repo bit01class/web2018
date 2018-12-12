@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	table{
+		margin:0px auto;
+		width:500px;
+		border-collapse: collapse;
+	}
+	table th,table td{
+		border: 1px solid gray;
+	}
+	#add{
+		position: absolute;
+		background-color: white;
+		width: 500px;
+	}
+</style>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+var obj;
+	$(document).ready(function(){
+		$('#add').hide();
+		$('#addbtn').click(function(e){
+			e.preventDefault();
+			var w=$('body').width()/2;
+			$('#add').css('margin-left',w-250+'px').css('margin-top','100px').show();
+			
+		});
+		
+		$.getJSON('list.json',function(data){
+			obj=data.bbs;
+			data.bbs.forEach(function(ele,idx){
+				var tr=$('<tr></tr>');
+				tr.append('<td>'+ele.num+'</td>');
+				tr.append('<td>'+ele.sub+'</td>');
+				tr.append('<td>'+ele.name+'</td>');
+				tr.append('<td>'+ele.nalja+'</td>');
+				$('table').append(tr);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<div id="add">
+<h1>insert page</h1>
+	<form action="insert.bit" method="post">
+		<div>
+			<label for="sub"></label><input type="text" id="sub" name="sub" />
+		</div>
+		<div>
+			<label for="name"></label><input type="text" id="name" name="name" />
+		</div>
+		<div>
+			<textarea rows="5" cols="60" name="content"></textarea>
+		</div>
+		<div>
+			<button type="submit">입력</button>
+		</div>
+	</form>
+</div>
+<div id="list">
+	<h1>list page</h1>
+	<table>
+		<tr>
+			<th>글번호</th>
+			<th>제목</th>
+			<th>글쓴이</th>
+			<th>날짜</th>
+		</tr>
+	</table>
+	<a id="addbtn" href="add.html">[add]</a>
+</div>
+</body>
+</html>

@@ -21,7 +21,14 @@
 		<servlet-name>ex03</servlet-name>
 		<servlet-class>com.bit.day14.Ex03</servlet-class>
 	</servlet>
-	
+	<servlet>
+		<servlet-name>ex04</servlet-name>
+		<servlet-class>com.bit.day14.Ex04</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ex05</servlet-name>
+		<servlet-class>com.bit.day14.Ex05</servlet-class>
+	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>ex01</servlet-name>
@@ -34,6 +41,32 @@
 	<servlet-mapping>
 		<servlet-name>ex03</servlet-name>
 		<url-pattern>/ex03.bit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ex04</servlet-name>
+		<url-pattern>/ex04.jsonp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ex05</servlet-name>
+		<url-pattern>/ex05.xml</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>list</servlet-name>
+		<servlet-class>com.bit.day14.bbs.List</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>add</servlet-name>
+		<servlet-class>com.bit.day14.bbs.Insert</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>list</servlet-name>
+		<url-pattern>/list.json</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>add</servlet-name>
+		<url-pattern>/insert.bit</url-pattern>
 	</servlet-mapping>
 </web-app>
 

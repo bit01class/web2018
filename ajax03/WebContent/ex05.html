@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		$.ajax({
+			url:'ex04.jsonp',
+			method:'get',
+			dataType:'jsonp',
+			jsonpCallback:'myCall',
+			success:function(data){
+				alert(data);
+			},
+			error:function(a,b,c){
+				alert(b+") "+c);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>jsonp를 통한 파싱</h1>
+	<div></div>
+</body>
+</html>
