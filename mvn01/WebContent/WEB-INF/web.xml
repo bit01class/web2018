@@ -2,12 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>mvn01</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>list.bit</welcome-file>
   </welcome-file-list>
   
   <servlet>
@@ -26,6 +21,14 @@
   	<servlet-name>detail</servlet-name>
   	<servlet-class>com.bit.day15.controller.OneController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>edit</servlet-name>
+  	<servlet-class>com.bit.day15.controller.EditFormController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>update</servlet-name>
+  	<servlet-class>com.bit.day15.controller.EditController</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>list</servlet-name>
@@ -43,7 +46,14 @@
   	<servlet-name>detail</servlet-name>
   	<url-pattern>/detail.bit</url-pattern>
   </servlet-mapping>
-  
+  <servlet-mapping>
+  	<servlet-name>edit</servlet-name>
+  	<url-pattern>/edit.bit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>update</servlet-name>
+  	<url-pattern>/update.bit</url-pattern>
+  </servlet-mapping>
 </web-app>
 
 

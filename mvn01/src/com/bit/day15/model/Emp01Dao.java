@@ -106,6 +106,32 @@ public class Emp01Dao {
 		
 		return dto;
 	}
+	
+	public int updateOne(int sabun,String name,int pay){
+		int su=0;
+		String sql="UPDATE EMP01 SET NAME=?,PAY=? WHERE SABUN=?";
+		try {
+			Class.forName(driver);
+			conn=DriverManager.getConnection(url, user, password);
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setInt(2, pay);
+			pstmt.setInt(3, sabun);
+			su=pstmt.executeUpdate();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return su;
+	}
 }
 
 

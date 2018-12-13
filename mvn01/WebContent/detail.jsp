@@ -51,8 +51,8 @@
 		<div><%=bean.getPay() %></div>
 	</div>
 	<div>
-		<a href="#">수정</a>
-		<a href="#">삭제</a>
+		<a href="edit.bit?idx=<%=bean.getSabun() %>">수정</a>
+		<a href="del.bit?idx=<%=bean.getSabun() %>">삭제</a>
 		<a href="#">뒤로</a>
 	</div>
 </body>
