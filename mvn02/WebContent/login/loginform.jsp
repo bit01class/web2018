@@ -10,9 +10,19 @@
 <body>
 <%@ include file="../template/header.jspf" %>
 <%@ include file="../template/menu.jspf" %>
-	<h1>소개 페이지</h1>
-	<p>내용</p>
-	<img alt="" src="./imgs/big1.jpg"/>
-<%@ include file="../template/footer.jspf" %>	
+<h1>로그인 페이지</h1>
+<form action="" method="post">
+	<div>
+		<label for="sabun">sabun</label><input type="text" name="sabun" id="sabun"/>
+	</div>
+	<div>
+		<label for="name">name</label><input type="text" name="name" id="name" />
+	</div>
+	<div>
+		<button type="submit">로그인</button>
+		<button type="result">취소</button>
+	</div>
+</form>
+<%@ include file="../template/footer.jspf" %>
 </body>
 </html>
