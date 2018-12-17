@@ -37,6 +37,20 @@ public class Emp03Dao {
 		}
 		return list;
 	}
+	
+	public void insertOne(String sub,String content,int unum) throws SQLException{
+		String sql="INSERT INTO EMP03 VALUES (EMP03_SEQ.NEXTVAL,?,?,?,SYSDATE,0)";
+		try{
+			pstmt=MyOra.getConnection().prepareStatement(sql);
+			pstmt.setInt(1, unum);
+			pstmt.setString(2, sub);
+			pstmt.setString(3, content);
+			pstmt.executeUpdate();
+		}finally{
+			if(pstmt!=null)pstmt.close();
+			if(MyOra.getConnection()!=null)MyOra.getConnection().close();
+		}
+	}
 
 }
 

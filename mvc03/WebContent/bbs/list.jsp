@@ -41,11 +41,24 @@
 			<h1>비트교육센터</h1>
 		</div>
 		<div id="menu">
-			<a href="#">HOME</a>
-			<a href="#">INTRO</a>
-			<a href="#">BBS</a>
-			<a href="#">LOGIN</a>
-			
+			<a href="index.do">HOME</a>
+			<a href="intro.do">INTRO</a>
+			<a href="list.do">BBS</a>
+			<%
+			if(session.getAttribute("result")==null){
+			%>
+			<a href="login.do">LOGIN</a>
+			<%
+			}else if(!(Boolean)session.getAttribute("result")){
+			%>
+			<a href="login.do">LOGIN</a>
+			<%
+			}else{
+			%>
+			<a href="logout.do">LOGOUT</a>
+			<%
+			}
+			%>
 		</div>
 		<div id="content">
 			<h1>리스트 페이지</h1>

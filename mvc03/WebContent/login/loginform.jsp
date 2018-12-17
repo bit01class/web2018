@@ -33,7 +33,19 @@
 			%>
 		</div>
 		<div id="content">
-			<h1>소개 페이지</h1>
+			<h1>로그인 페이지</h1>
+			<form method="post">
+				<div>
+					<label for="id">id</label><input type="text" name="id" id="id" />
+				</div>
+				<div>
+					<label for="pw">pw</label><input type="password" name="pw" id="pw" />
+				</div>
+				<div>
+					<button type="submit">로그인</button>
+					<button type="reset">취소</button>
+				</div>
+			</form>
 		</div>
 		<div id="footer">
 			<address>비트캠프 서울시 서초구 서초동 1327-15 비트아카데미빌딩</address>
@@ -42,3 +54,27 @@
 	</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
