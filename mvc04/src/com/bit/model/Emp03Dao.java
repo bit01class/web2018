@@ -16,6 +16,7 @@ public class Emp03Dao {
 	
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	private Connection conn;
 
 	public ArrayList<Emp03Dto> selectAll() throws SQLException{
 		ArrayList<Emp03Dto> list =new ArrayList<Emp03Dto>();
@@ -52,6 +53,37 @@ public class Emp03Dao {
 		return list;
 	}
 
+	public Emp03Dto selectOne(int num) throws SQLException{
+		Emp03Dto bean=new Emp03Dto();
+		String sql="SELECT * FROM EMP03 WHERE num=?";
+		
+		try {
+			InitialContext init = new InitialContext();
+			DataSource dataSource=(DataSource) init.lookup("java:/comp/env/jdbc/oracle");
+			conn=dataSource.getConnection();
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				bean.setNum(rs.getInt("num"));
+				bean.setUnum(rs.getInt("unum"));
+				bean.setSub(rs.getString("sub"));
+				bean.setContent(rs.getString("content"));
+				bean.setNalja(rs.getDate("nalja"));
+				bean.setCnt(rs.getInt("cnt"));
+			}
+		}finally{
+			if(rs!=null)rs.close();
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+		}
+		
+		return bean;
+	}
 }
 
 
