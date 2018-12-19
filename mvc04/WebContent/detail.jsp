@@ -17,8 +17,10 @@
 	#content>div>div>span:nth-child(2n-1){
 		background-color: gray;
 		width: 80px;
-	}
+	}    
 </style>
+<script type="text/javascript" src="../js/jquery-1.12.4.js"></script>
+<script type="text/javascript" src="../js/login.js"></script>
 </head>
 <body>
 <%@ include file="template/header.jspf" %>

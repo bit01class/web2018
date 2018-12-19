@@ -11,9 +11,8 @@
 <body>
 <%@ include file="template/header.jspf" %>
 <%@ include file="template/menu.jspf" %>
-	<h1>소개 페이지</h1>
-		
-
+<h1>로그아웃</h1>
+<p>이용해주셔서 감사합니다</p>
 <%@ include file="template/footer.jspf" %>
 </body>
 </html>

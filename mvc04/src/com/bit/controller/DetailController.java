@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bit.model.Emp03Dao;
 
@@ -16,17 +17,21 @@ public class DetailController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int sabun=Integer.parseInt(request.getParameter("idx"));
-		
-		Emp03Dao dao = new Emp03Dao();
-		try {
-			request.setAttribute("bean", dao.selectOne(sabun));
-		} catch (SQLException e) {
-			e.printStackTrace();
+		HttpSession session = request.getSession();
+		if(session.getAttribute("name")==null){
+			request.getRequestDispatcher("../login.jsp").forward(request, response);
+		}else{
+			int sabun=Integer.parseInt(request.getParameter("idx"));
+			
+			Emp03Dao dao = new Emp03Dao();
+			try {
+				request.setAttribute("bean", dao.selectOne(sabun));
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			request.getRequestDispatcher("../detail.jsp").forward(request, response);
 		}
-		
-		request.getRequestDispatcher("../detail.jsp").forward(request, response);
-		
 	}
 
 }

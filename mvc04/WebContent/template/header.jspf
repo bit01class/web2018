@@ -4,8 +4,16 @@
 		<div id="header">
 			<h1>비트교육센터</h1>
 			<form method="post">
-				<label for="id"></label><input type="text" name="id" id="id"/><br/>
-				<label for="pw"></label><input type="text" name="pw" id="pw"/><br/>
+			<%
+			String name=(String)session.getAttribute("name");
+			if(name==null){
+			%>
+				<label for="id">id</label><input type="text" name="id" id="id"/><br/>
+				<label for="pw">pw</label><input type="text" name="pw" id="pw"/><br/>
 				<button type="submit">login</button>
+			<%}else{ %>
+				<p><%=name %>님 로그인하셨습니다</p>
+				<a href="/mvc04/logout.do">로그아웃</a>
+			<%} %>
 			</form>
 		</div>
